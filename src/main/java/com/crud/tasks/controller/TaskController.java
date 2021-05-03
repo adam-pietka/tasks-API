@@ -28,7 +28,7 @@ public class TaskController {
 
     @PutMapping
     public TaskDto updateTask(TaskDto taskDto) {
-        return new TaskDto(1L, "Edited test title", "Test content");
+        return new TaskDto(1L, "Edited test title", "Test content.");
     }
 
     @PostMapping
