@@ -11,14 +11,14 @@ import java.util.List;
 @RequestMapping("/v1/task")
 public class TaskController {
 
-    @RequestMapping(method = RequestMethod.GET, value = "getTasks")
+    @GetMapping(value = "getTasks")
     public List<TaskDto> getTasks() {
         return new ArrayList<>();
     }
 
-    @GetMapping
+    @GetMapping(value = "getTask")
     public TaskDto getTask(Long taskId) {
-        return new TaskDto(1L, "test title", "test_content");
+        return new TaskDto(1L, "test_title", "test_content.");
     }
 
     @DeleteMapping
@@ -26,7 +26,7 @@ public class TaskController {
 
     }
 
-    @PutMapping
+    @PutMapping(value = "updateTask")
     public TaskDto updateTask(TaskDto taskDto) {
         return new TaskDto(1L, "Edited test title", "Test content");
     }
