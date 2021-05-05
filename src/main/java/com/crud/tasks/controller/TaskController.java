@@ -2,8 +2,6 @@ package com.crud.tasks.controller;
 
 import com.crud.tasks.domain.TaskDto;
 import org.springframework.web.bind.annotation.*;
-
-
 import java.util.ArrayList;
 import java.util.List;
 
@@ -21,14 +19,13 @@ public class TaskController {
         return new TaskDto(1L, "test_title", "test_content.");
     }
 
-    @DeleteMapping
-    public void deleteTask(Long taskId) {
-
-    }
-
     @PutMapping(value = "updateTask")
     public TaskDto updateTask(TaskDto taskDto) {
         return new TaskDto(1L, "Edited test title", "Test content");
+    }
+
+    @DeleteMapping
+    public void deleteTask(Long taskId) {
     }
 
     @PostMapping
