@@ -1,6 +1,6 @@
-package com.crud.forum.post.Controller;
+package com.crud.tasks.forum.post.Controller;
 
-import com.crud.forum.post.domain.PostDao;
+import com.crud.tasks.forum.post.domain.PostDao;
 import org.springframework.web.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ public class PostController {
 
     @GetMapping(value = "getPost")
     public PostDao getPost(Long postId){
-        return new PostDao(1L, 11001L, "It's first post on virtual forum.");
+        return new PostDao(1L, 11001L, "It's first post on virtual forum. XYZ");
     }
 
     @PutMapping(value = "updatePost")

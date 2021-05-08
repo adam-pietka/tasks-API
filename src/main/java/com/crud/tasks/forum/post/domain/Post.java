@@ -1,4 +1,4 @@
-package com.crud.forum.post.domain;
+package com.crud.tasks.forum.post.domain;
 
 import lombok.Getter;
 
