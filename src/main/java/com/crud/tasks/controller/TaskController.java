@@ -39,6 +39,11 @@ public class TaskController {
         );
     }
 
+    @RequestMapping(method = RequestMethod.DELETE, value = "removeTask")
+    public void deleteTask(@RequestParam Long taskId) {
+        service.deleteTask(taskId);
+    }
+
     @RequestMapping(method = RequestMethod.POST, value = "createTask", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void createTask(@RequestBody TaskDto taskDto) {
         Task task = taskMapper.mapToTask(taskDto);
@@ -52,9 +57,9 @@ public class TaskController {
         return taskMapper.mapToTaskDto(savedTask);
     }
 
-    @DeleteMapping
+    /*@DeleteMapping
     public void deleteTask(Long taskId) {
-    }
+    }*/
 
     /*    @GetMapping(value = "getTask")
     public TaskDto getTask(Long taskId) {
