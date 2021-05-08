@@ -1,0 +1,23 @@
+body {
+   background-image: linear-gradient(to right, gray, black);
+}
+
+h1 {
+   text-align: center;
+   color: #8ebf42
+}
+
+h2 {
+   text-align: center;
+   color: red;
+}
+
+h3 {
+   text-align: center;
+   color: orange;
+}
+
+p{
+	font-size: 18px; 
+	color: white;
+}
