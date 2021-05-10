@@ -11,19 +11,13 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import java.util.Optional;
 
+@CrossOrigin(origins = "*")
 @RestController
 @RequestMapping("/v1/task")
 @RequiredArgsConstructor
 public class TaskController {
     private final DbService service;
     private final TaskMapper taskMapper;
-
-/*    @GetMapping(value = "getTasks")
-    public List<TaskDto> getTasks() {
-//        return new ArrayList<>();
-        List<Task> tasks = service.getAllTasks();
-        return taskMapper.mapToTaskDtoList(tasks);
-    }*/
 
 //    @RequestMapping(method = RequestMethod.GET, value = "getTasks")
     @GetMapping(value = "getTasks")
@@ -56,22 +50,4 @@ public class TaskController {
         Task savedTask = service.saveTask(task);
         return taskMapper.mapToTaskDto(savedTask);
     }
-
-    /*@DeleteMapping
-    public void deleteTask(Long taskId) {
-    }*/
-
-    /*    @GetMapping(value = "getTask")
-    public TaskDto getTask(Long taskId) {
-        return new TaskDto(1L, "test_title", "test_content.Static DATA.");
-    }*/
-
-    /*@PutMapping(value = "updateTask")
-    public TaskDto updateTask(TaskDto taskDto) {
-        return new TaskDto(1L, "Edited test title", "Test content");
-    }*/
-
-    /*@PostMapping
-    public void createTask(TaskDto taskDto) {
-    }*/
 }
