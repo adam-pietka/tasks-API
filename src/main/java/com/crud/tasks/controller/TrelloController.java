@@ -17,8 +17,23 @@ public class TrelloController {
     private final TrelloClient trelloClient;
 
     @GetMapping("getTrelloBoards")
-    public void getTrelloBoards() {
+    public void getTrelloBoards() { // zamianst void ma być List<TrelloBoardDto>
 
+        // GET request
+        List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
+
+        trelloBoards.forEach(trelloBoardDto -> {
+            System.out.println(trelloBoardDto.getId() + " - " + trelloBoardDto.getName());
+
+            System.out.println("This board contains lists: ");
+
+            trelloBoardDto.getLists().forEach(trelloList -> {
+                System.out.println(
+                        trelloList.getName() + " - " + trelloList.getId() + " - " + trelloList.isClosed()
+                );
+            });
+        });
+/*
         List<TrelloBoardDto> trelloBoards = trelloClient.getTrelloBoards();
         trelloBoards.stream()
                 .filter(trelloBoardDto -> trelloBoardDto.getName().toUpperCase().contains("KODILLA"))
@@ -26,6 +41,7 @@ public class TrelloController {
                 .forEach(e->{
                     System.out.println(e.getId() + " - " + e.getName());
                 });
+*/
 
         /*trelloBoards.forEach(trelloBoardDto -> {
             System.out.println(trelloBoardDto.getId() + " " + trelloBoardDto.getName());
