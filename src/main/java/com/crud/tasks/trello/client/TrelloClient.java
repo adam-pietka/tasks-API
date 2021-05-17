@@ -16,8 +16,8 @@ import java.util.Optional;
 @Component
 @RequiredArgsConstructor
 public class TrelloClient {
-    private final RestTemplate restTemplate;
 
+    private final RestTemplate restTemplate;
 
     @Value("${trello.api.endpoint.prod}")
     private String trelloApiEndpoint;
