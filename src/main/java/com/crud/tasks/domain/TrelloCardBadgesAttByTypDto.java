@@ -6,10 +6,8 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class TrelloCardBargesAttByTypTrelloDto {
+public class TrelloCardBadgesAttByTypDto {
 
-    @JsonProperty("board")
-    private int board;
-    @JsonProperty("card")
-    private int card;
+    @JsonProperty("trello")
+    private TrelloCardBadgesAttByTypTrelloDto trello ;
 }
