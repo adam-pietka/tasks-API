@@ -2,6 +2,7 @@ package com.crud.tasks.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
@@ -12,6 +13,7 @@ import java.util.Map;
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
 @NoArgsConstructor
+@AllArgsConstructor
 public class CreatedTrelloCard {
 
     @JsonProperty("id")
@@ -20,8 +22,8 @@ public class CreatedTrelloCard {
     private String name;
     @JsonProperty("shortUrl")
     private String shortUrl;
-    @JsonProperty("badges")
-    private TrelloCardBadgesDto badges;
+    /*@JsonProperty("badges")
+    private TrelloCardBadgesDto badges;*/
 
 //    private List<TrelloCardBadgesDto> badges;
 
