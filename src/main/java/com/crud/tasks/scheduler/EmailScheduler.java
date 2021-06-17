@@ -27,7 +27,7 @@ public class EmailScheduler {
                         adminConfig.getAdminMail(),
                         SUBJECT,
                         messageContent()
-                        ,"adi2-20@wp.pl"
+                        ,"some@test.test"
                 )
         );
     }
