@@ -17,8 +17,9 @@ public class EmailScheduler {
     private final AdminConfig adminConfig;
     private static final String SUBJECT = "Tasks: Once a day email";
 
-//  @Scheduled(fixedDelay = 10000)
-    @Scheduled(cron = "0 0 10 * * *")
+
+//    @Scheduled(cron = "0 0 10 * * *")
+@Scheduled(fixedDelay = 10000)
     public void sendInformationEmail(){
 
         simpleEmailService.send(
@@ -27,7 +28,7 @@ public class EmailScheduler {
                         SUBJECT,
                         messageContent()
                         ,
-                        null
+                        "cos@cc.cc"
                 )
         );
     }
